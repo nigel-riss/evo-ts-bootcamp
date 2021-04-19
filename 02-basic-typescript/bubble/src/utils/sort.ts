@@ -1,12 +1,12 @@
 import type { BubbleItem } from './types';
 
 /**
- * Sorts array of {@link BubbleItem} using one pass of "bubble sort" algorithm.
- * @param arr array to sort
- * @param iteration number of sorting iteration
- * @returns 
+ * Sorts array using one pass of "bubble sort" algorithm.
+ * @param arr - array of `BubbleItem` to sort
+ * @param iteration - number of sorting iteration
+ * @returns sorded array of `BubbleItem`
  */
-const bubbleSortOnce = (
+export const bubbleSortOnce = (
   arr: Array<BubbleItem>,
   iteration: number = 0,
 ): boolean => {
@@ -20,9 +20,4 @@ const bubbleSortOnce = (
   }
 
   return isSwapped;
-};
-
-
-export {
-  bubbleSortOnce,
 };

@@ -6,8 +6,14 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      
+
     }
+  }
+
+  render() {
+    return (<div className="app">
+      <h1>Bubble Sort visualization</h1>
+    </div>)
   }
 }
 
