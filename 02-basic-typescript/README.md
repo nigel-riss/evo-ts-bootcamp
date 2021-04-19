@@ -2,7 +2,7 @@
 https://codesandbox.io/s/typescript-playground-export-forked-pbnwj?file=/index.ts
 
 2. Array playground
-IN PROGRESS...
+https://codesandbox.io/s/typescript-playground-export-forked-fjhxl?file=/index.ts
 
 3. Home task
-IN PROGRESS...
+This DONE ✔
