@@ -1,4 +1,6 @@
 .app {
+  max-width: 1024px;
+  margin: 0 auto;
   text-align: center;
 }
 
@@ -61,4 +63,18 @@
 
 .app__status--solved {
   color: #469e4e;
+  animation-name: solved-animation;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in;
+}
+
+@keyframes solved-animation {
+  from {
+    letter-spacing: 10em;
+    opacity: 0;
+  }
+  to {
+    letter-spacing: 0.1em;
+    opacity: 1;
+  }
 }

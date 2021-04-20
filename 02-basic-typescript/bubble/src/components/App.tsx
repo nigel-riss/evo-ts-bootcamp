@@ -78,7 +78,11 @@ export class App extends React.Component<{}, AppState> {
         max="10"
         step="1"
       />
-      <p className="app__status app__status--solved">Not Solved</p>
+
+      {(this.state.iteration >= this.state.solution.length - 1)
+        ? <p className="app__status app__status--solved">Solved!</p>
+        : <p className="app__status">Not Solved</p>
+      }
     </div>)
   }
 }
