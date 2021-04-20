@@ -1,3 +1,44 @@
 .app {
   text-align: center;
 }
+
+.app__title {
+  color: #1d3557;
+  font-weight: 400;
+}
+
+.app__buttons {
+  display: flex;
+  justify-content: center;
+  margin: 1rem;
+}
+
+.app__buttons button {
+  display: block;
+  margin: 1rem;
+  padding: 0.85rem 1rem;
+  width: 10rem;
+
+  border: 2px solid #1d3557;
+  border: none;
+  border-radius: 0.25rem;
+
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  line-height: 1.25;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  background-color: #457b9d;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+  transition: all 0.25s ease-out;
+}
+
+.app__buttons button:hover {
+  background-color: #cc5a5a;
+}
