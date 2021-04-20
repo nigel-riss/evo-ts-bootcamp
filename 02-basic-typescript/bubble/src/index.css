@@ -58,6 +58,13 @@ input[type=range]::-webkit-slider-thumb {
   border-radius: 16px;
   cursor: pointer;
   -webkit-appearance: none;
+  transition: all 0.25s linear;
+}
+input[type=range]::-webkit-slider-thumb:hover {
+  background: var(--crimson);
+}
+input[type=range]::-webkit-slider-thumb:active {
+  background: var(--orange);
 }
 input[type=range]:focus::-webkit-slider-runnable-track {
   background: #cd5e5e;

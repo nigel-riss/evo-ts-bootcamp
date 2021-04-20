@@ -29,27 +29,33 @@ export class App extends React.Component<{}, AppState> {
     }
   }
 
-  componentDidMount() {
+  startOver(): void {
     this.setState({
+      isSolved: false,
+      isPaused: true,
+      iteration: 0,
       solution: bubbleSort(generateArray()),
     });
+  }
+
+  componentDidMount(): void {
+    this.startOver();
 
     this.intervalId = window.setInterval(() => {
-      if (this.state.iteration < this.state.solution.length - 1) {
+      if (this.state.iteration < this.state.solution.length - 1
+        && !this.state.isPaused) {
         this.setState((prevState: AppState): {iteration: number} => ({
           iteration: prevState.iteration + 1,
         }));
-      } else {
-
       }
     }, Options.ITERATION_DELAY);
   }
 
-  componentWillUnmount() {
+  componentWillUnmount(): void {
     window.clearInterval(this.intervalId);
   }
 
-  render() {
+  render(): JSX.Element {
     return (<div className="app">
       <h1 className="app__title">Bubble Sort Visualization</h1>
       <div className="app__bars">
@@ -63,20 +69,33 @@ export class App extends React.Component<{}, AppState> {
         ))}
       </div>
       <div className="app__buttons">
-        <button>
+        <button
+          onClick={(): void => {this.startOver()}}
+        >
           New Set
         </button>
-        <button>
+        <button
+          onClick={(): void => {
+            this.setState((prevState: AppState): {isPaused: boolean} => ({
+              isPaused: !prevState.isPaused,
+            }));
+          }}
+        >
           {this.state.isPaused ? `Start` : `Pause`}
         </button>
       </div>
       <input
         type="range"
-        name=""
-        id=""
         min="0"
-        max="10"
+        max={this.state.solution.length - 1}
         step="1"
+        value={this.state.iteration}
+        onChange={(evt: React.FormEvent<HTMLInputElement>) => {
+          this.setState({
+            iteration: +(evt.target as HTMLTextAreaElement).value,
+            isPaused: true,
+          });
+        }}
       />
 
       {(this.state.iteration >= this.state.solution.length - 1)
