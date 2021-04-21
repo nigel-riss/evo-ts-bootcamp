@@ -17,11 +17,11 @@ export const generateArray = (
   maxValue: number = Options.MAX_VALUE,
 ): Array<BubbleItem> => {
   const arrLength = getRandomInt(minLength, maxLength);
-  const arr: Array<BubbleItem> = [...new Array(arrLength)]
-    .map((_, i: number): BubbleItem => ({
+  return Array.from(
+    { length: arrLength },
+    (_, i: number): BubbleItem => ({
       id: i,
       value: getRandomInt(minValue, maxValue),
-    }));
-
-  return arr;
+    })
+  );
 };

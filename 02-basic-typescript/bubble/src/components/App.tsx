@@ -17,16 +17,11 @@ type AppState = {
 
 export class App extends React.Component<{}, AppState> {
   private intervalId?: number;
-
-  constructor(props: {}) {
-    super(props);
-
-    this.state = {
-      isSolved: false,
-      isPaused: true,
-      iteration: 0,
-      solution: [[]],
-    }
+  state = {
+    isSolved: false,
+    isPaused: true,
+    iteration: 0,
+    solution: [[]],
   }
 
   startOver(): void {

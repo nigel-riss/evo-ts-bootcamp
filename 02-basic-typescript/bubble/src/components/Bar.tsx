@@ -11,13 +11,11 @@ type BarProps = {
 export const Bar = ({
   value,
   maxValue,
-}: BarProps): React.ReactElement => {
-  return(<div
+}: BarProps): React.ReactElement => (
+  <div
     className="bar"
     style={{
       height: `${value / maxValue * 100}%`
     }}
-  >
-    {/* {value} */}
-  </div>);
-};
+  />
+);
