@@ -1,0 +1,81 @@
+.app {
+  max-width: 1024px;
+  margin: 0 auto;
+  text-align: center;
+  overflow: hidden;
+}
+
+.app__title {
+  color: #1d3557;
+  font-weight: 400;
+  margin-bottom: 4rem;
+}
+
+.app__bars {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 12rem;
+}
+
+.app__buttons {
+  display: flex;
+  justify-content: center;
+  margin: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.app__buttons button {
+  display: block;
+  margin: 1rem;
+  padding: 0.85rem 1rem;
+  width: 10rem;
+
+  border: 2px solid #1d3557;
+  border: none;
+  border-radius: 0.25rem;
+
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  line-height: 1.25;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  background-color: #457b9d;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+  transition: all 0.25s ease-out;
+}
+
+.app__buttons button:hover {
+  background-color: #cc5a5a;
+}
+
+.app__status {
+  color: #cc5a5a;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.app__status--solved {
+  color: #469e4e;
+  animation-name: solved-animation;
+  animation-duration: 0.25s;
+  animation-timing-function: ease-in;
+}
+
+@keyframes solved-animation {
+  from {
+    letter-spacing: 10em;
+    opacity: 0;
+  }
+  to {
+    letter-spacing: 0.1em;
+    opacity: 1;
+  }
+}
